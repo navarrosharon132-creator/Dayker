@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayker web</title>
+     <link rel="icon" "type=""= "img/png" href="blob:https://gemini.google.com/a0737472-5c8a-4962-a57b-9c248ea2f0d6" href="" <link rel="inco" "type=""="img/png" href="blob:https://gemini.google.com/a0737472-5c8a-4962-a57b-9c248ea2f0d6""
+
+     <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Dayker (DAYKER) — Desarrollo web, UI/UX y sistemas digitales desde Aguachica, Cesar, Colombia. Portafolio y contacto." />
+  <meta name="author" content="Dayker" />
+  <meta name="theme-color" content="#030306" />
+  <meta property="og:title" content="DAYKER — Portafolio profesional" />
+  <meta property="og:description" content="Experiencias digitales, sitios web y productos con diseño claro y código sólido. Aguachica, Colombia." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>DAYKER — Dayker | Desarrollo web &amp; UI/UX | Colombia</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dayker",
+    "email": "daykenavadayker@gmail.com",
+    "telephone": "+57-315-7389913",
+    "jobTitle": "Desarrollador web & diseño UI/UX",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Aguachica",
+      "addressRegion": "Cesar",
+      "addressCountry": "CO"
+    },
+    "knowsAbout": ["Desarrollo web", "UI/UX", "JavaScript", "React", "Node.js"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #030306;
+      --bg-elevated: #0a0c12;
+      --surface: rgba(12, 18, 32, 0.72);
+      --text: #eef4ff;
+      --muted: #8b9bb8;
+      --accent: #00b4ff;
+      --accent-2: #0077ff;
+      --glow: rgba(0, 180, 255, 0.45);
+      --border: rgba(0, 180, 255, 0.12);
+      --radius: 16px;
+      --font: "Plus Jakarta Sans", system-ui, sans-serif;
+      --font-display: "Orbitron", sans-serif;
+      --max: 1180px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
+
+    /* Fondo rejilla tipo circuito */
+    .page-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(0, 180, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 255, 0.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, black 20%, transparent 75%);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(3, 3, 6, 0.88);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-end {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.12em;
+      background: linear-gradient(135deg, #7ee8ff 0%, var(--accent) 40%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 40px var(--glow);
+    }
+
+    .logo img {
+      height: 36px;
+      width: auto;
+      max-width: 160px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .logo.has-img .logo-text { display: none; }
+    .logo:not(.has-img) img { display: none; }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.4rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); text-decoration: none; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #020308;
+      box-shadow: 0 0 24px rgba(0, 180, 255, 0.35);
+    }
+    .btn-primary:hover { box-shadow: 0 0 32px rgba(0, 180, 255, 0.5); }
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(0, 180, 255, 0.35);
+      color: var(--text);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 0;
+      scroll-margin-top: 5.25rem;
+      border-top: 1px solid rgba(0, 180, 255, 0.06);
+    }
+
+    section:first-of-type { border-top: none; }
+
+    .section-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      letter-spacing: 0.06em;
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 42ch;
+      font-size: 0.95rem;
+    }
+
+    /* ——— Hero ——— */
+    #inicio {
+      padding: 3.5rem 0 4.5rem;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    .hero-copy { text-align: center; }
+    @media (min-width: 900px) {
+      .hero-copy { text-align: left; }
+    }
+
+    .hero-brand {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      margin: 0 0 1rem;
+      background: linear-gradient(180deg, #fff 0%, #7ee8ff 45%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 30px rgba(0, 180, 255, 0.5));
+    }
+
+    .hero h1 {
+      font-family: var(--font);
+      font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0 0 1rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .hero .lead {
+      margin: 0 0 1.75rem;
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 520px;
+      margin-inline: auto;
+    }
+    @media (min-width: 900px) {
+      .hero .lead { margin-inline: 0; }
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    @media (min-width: 900px) {
+      .hero-actions { justify-content: flex-start; }
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-float-icons {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-float-icons span {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      background: rgba(0, 180, 255, 0.08);
+      box-shadow: 0 0 20px rgba(0, 180, 255, 0.2);
+      animation: floaty 5s ease-in-out infinite;
+    }
+
+    .hero-float-icons span:nth-child(1) {
+      top: 8%;
+      left: 0;
+      animation-delay: 0s;
+    }
+
+    .hero-float-icons span:nth-child(2) {
+      top: 18%;
+      right: 2%;
+      animation-delay: 0.6s;
+    }
+
+    .hero-float-icons span:nth-child(3) {
+      bottom: 22%;
+      left: 6%;
+      animation-delay: 1.2s;
+    }
+
+    .hero-float-icons span:nth-child(4) {
+      bottom: 12%;
+      right: 8%;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .scroll-hint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 2.5rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .scroll-hint .mouse {
+      width: 22px;
+      height: 34px;
+      border: 2px solid rgba(0, 180, 255, 0.4);
+      border-radius: 11px;
+      position: relative;
+    }
+
+    .scroll-hint .mouse::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 6px;
+      border-radius: 2px;
+      background: var(--accent);
+      animation: scrolldot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrolldot {
+      0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      50% { opacity: 0.35; transform: translateX(-50%) translateY(8px); }
+    }
+
+    .globe {
+      width: min(100%, 340px);
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .globe-ring {
+      position: absolute;
+      inset: 8%;
+      border: 1px solid rgba(0, 180, 255, 0.35);
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(0, 180, 255, 0.15), inset 0 0 40px rgba(0, 180, 255, 0.08);
+      animation: spin 24s linear infinite;
+    }
+    .globe-ring:nth-child(2) {
+      inset: 18%;
+      animation-duration: 18s;
+      animation-direction: reverse;
+      opacity: 0.7;
+    }
+    .globe-ring:nth-child(3) {
+      inset: 28%;
+      animation-duration: 12s;
+      border-color: rgba(0, 119, 255, 0.4);
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .globe svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.85;
+    }
+
+    /* ——— Cards / glass ——— */
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    /* ——— Carrusel proyectos destacados ——— */
+    .carousel {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+    }
+
+    .carousel-viewport { overflow: hidden; }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+      padding: 2rem;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0, 180, 255, 0.12), transparent 55%);
+    }
+
+    .mock-browser {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #050810;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .mock-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 12px;
+      background: rgba(0, 180, 255, 0.06);
+      border-bottom: 1px solid var(--border);
+    }
+    .mock-browser-bar span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .mock-browser-bar span:nth-child(1) { background: #ff5f57; }
+    .mock-browser-bar span:nth-child(2) { background: #febc2e; }
+    .mock-browser-bar span:nth-child(3) { background: #28c840; }
+
+    .mock-browser-body {
+      padding: 2rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-shadow: 0 0 20px var(--glow);
+    }
+
+    .carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-top: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .carousel-nav button {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(0, 180, 255, 0.08);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .carousel-nav button:hover {
+      background: rgba(0, 180, 255, 0.2);
+      border-color: var(--accent);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-dots button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+    }
+    .carousel-dots button.is-active {
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--glow);
+    }
+
+    /* ——— Grid trabajos ——— */
+    #trabajos-recientes {
+      scroll-margin-top: 5.5rem;
+    }
+
+    .works-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .works-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .work-card {
+      padding: 0;
+      overflow: hidden;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .work-card:hover {
+      border-color: rgba(0, 180, 255, 0.35);
+      transform: translateY(-4px);
+    }
+
+    .mini-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      background: rgba(0, 180, 255, 0.06);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mini-browser-bar i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .mini-browser-bar i:nth-child(1) { background: #ff5f57; }
+    .mini-browser-bar i:nth-child(2) { background: #febc2e; }
+    .mini-browser-bar i:nth-child(3) { background: #28c840; }
+
+    .work-thumb {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .work-thumb-inner {
+      aspect-ratio: 16 / 10;
+      background: linear-gradient(145deg, #121820, #0a0e14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .work-card:nth-child(1) .work-thumb-inner {
+      background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    }
+    .work-card:nth-child(2) .work-thumb-inner {
+      background: linear-gradient(145deg, #1a1030, #0d0818);
+    }
+    .work-card:nth-child(3) .work-thumb-inner {
+      background: linear-gradient(145deg, #0c1a28, #061018);
+    }
+    .work-card:nth-child(4) .work-thumb-inner {
+      background: linear-gradient(145deg, #142018, #0a1210);
+    }
+    .work-card:nth-child(5) .work-thumb-inner {
+      background: linear-gradient(145deg, #181228, #0c0818);
+    }
+    .work-card:nth-child(6) .work-thumb-inner {
+      background: linear-gradient(145deg, #0a1622, #050c14);
+    }
+
+    .work-body { padding: 1.25rem; }
+    .work-body h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+    .work-body p { margin: 0 0 0.75rem; color: var(--muted); font-size: 0.88rem; }
+    .work-cat {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ——— Sobre mí ——— */
+    .about-layout {
+      display: grid;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .about-layout { grid-template-columns: 1fr 1.1fr; }
+    }
+
+    .skill-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .skill-item label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      margin-bottom: 0.35rem;
+      color: var(--muted);
+    }
+    .skill-item label strong { color: var(--text); font-weight: 600; }
+    .skill-bar {
+      height: 8px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+      box-shadow: 0 0 16px var(--glow);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 500px) {
+      .stats { grid-template-columns: 1fr; }
+    }
+
+    .stat-card {
+      padding: 1rem;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(0, 180, 255, 0.04);
+    }
+    .stat-card strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+    .stat-card span { font-size: 0.78rem; color: var(--muted); line-height: 1.3; }
+
+    /* ——— Servicios ——— */
+    .services-row {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .service-card {
+      padding: 1.35rem 1rem;
+      text-align: center;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service-card:hover {
+      border-color: rgba(0, 180, 255, 0.35);
+      box-shadow: 0 0 28px rgba(0, 180, 255, 0.12);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 0.75rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      background: rgba(0, 180, 255, 0.12);
+      border: 1px solid var(--border);
+    }
+
+    .service-card h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* ——— Contacto ——— */
+    .contact-layout {
+      display: grid;
+      gap: 2rem;
+    }
+    @media (min-width: 800px) {
+      .contact-layout { grid-template-columns: 1fr 1.2fr; }
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .contact-details {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem 1.35rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(0, 180, 255, 0.04);
+    }
+
+    .contact-details h3 {
+      margin: 0 0 1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .contact-details dl {
+      margin: 0;
+    }
+
+    .contact-details dt {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.85rem;
+      font-weight: 600;
+    }
+
+    .contact-details dt:first-of-type {
+      margin-top: 0;
+    }
+
+    .contact-details dd {
+      margin: 0.3rem 0 0;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .contact-details a {
+      word-break: break-word;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.35);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 180, 255, 0.15);
+    }
+    .contact-form textarea { min-height: 140px; resize: vertical; }
+
+    /* ——— Footer ——— */
+    .site-footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: 1.2fr repeat(3, 1fr); }
+    }
+
+    .footer-col h4 {
+      margin: 0 0 1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-col li { margin-bottom: 0.5rem; }
+    .footer-col a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+    .footer-col a:hover { color: var(--text); }
+
+    .footer-brand .logo-text { font-size: 1.5rem; margin-bottom: 0.75rem; display: inline-block; }
+    .footer-brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 280px;
+      line-height: 1.55;
+    }
+
+    .footer-copy {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0, 180, 255, 0.08);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .link-quiet { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+    .link-quiet:hover { text-decoration: none; opacity: 0.9; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0.75rem;
+      z-index: 200;
+      padding: 0.6rem 1rem;
+      background: var(--accent);
+      color: #020308;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+    .skip-link:focus {
+      left: 0.75rem;
+      text-decoration: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(0, 180, 255, 0.06);
+    }
+
+    .carousel-slide p {
+      margin: 1rem 0 0;
+      max-width: 480px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+    .work-tags span {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+    }
+
+    .work-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .work-link:hover { text-decoration: none; opacity: 0.85; }
+
+    .about-lead {
+      font-size: 1.05rem;
+      color: var(--text);
+      font-weight: 600;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    .about-list {
+      margin: 0 0 1.25rem;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+    .about-list li { margin-bottom: 0.45rem; }
+
+    .service-card p {
+      margin: 0.55rem 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .process-step {
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .process-step .step-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(0, 180, 255, 0.25);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .process-step h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+      font-family: var(--font);
+      font-weight: 700;
+    }
+
+    .process-step p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech-pill {
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: rgba(0, 180, 255, 0.05);
+      color: var(--text);
+    }
+
+    .cta-strip {
+      margin: 0;
+      padding: 2.5rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(0, 180, 255, 0.1), transparent 70%);
+    }
+
+    .cta-strip h2 {
+      margin-bottom: 0.5rem;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    }
+
+    .cta-strip p {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin-inline: auto;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    a.scroll-hint {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    a.scroll-hint:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido-principal">Ir al contenido</a>
+  <div class="page-grid" aria-hidden="true"></div>
+
+  <header>
+    <div class="wrap nav">
+      <!-- Añade class="has-img" al <a> cuando uses logo.png real -->
+      <a class="logo" href="#inicio" aria-label="Inicio">
+        <span class="logo-text">DAYKER</span>
+        <img src="logo.png" alt="DAYKER" width="140" height="36" />
+      </a>
+      <div class="nav-end">
+        <nav aria-label="Principal">
+          <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary" href="#contacto">Hablemos</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <section id="inicio">
+      <div class="wrap">
+        <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="hero-brand">DAYKER</p>
+          <p class="hero-badge">Disponible para proyectos · Aguachica, Colombia</p>
+          <h1>Desarrollo experiencias digitales de alto nivel</h1>
+          <p class="lead">
+            Desarrollo y diseño web profesional que impulsa marcas y negocios. Soy
+            <strong style="color: var(--text);">Dayker</strong>: sitios claros, rápidos y con identidad
+            fuerte, desde Aguachica para clientes en Colombia y Latinoamérica.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn-ghost" href="#contacto">Contactar</a>
+            <a class="btn btn-ghost" href="https://wa.me/573157389913" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-float-icons" aria-hidden="true">
+            <span title="Código">&lt;/&gt;</span>
+            <span title="Web">&#9632;</span>
+            <span title="Nube">&#9729;</span>
+            <span title="Diseño">&#9670;</span>
+          </div>
+          <div class="globe" aria-hidden="true">
+            <div class="globe-ring"></div>
+            <div class="globe-ring"></div>
+            <div class="globe-ring"></div>
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#00b4ff;stop-opacity:0.8" />
+                  <stop offset="100%" style="stop-color:#0077ff;stop-opacity:0.3" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="100" cy="100" rx="88" ry="88" fill="none" stroke="url(#g)" stroke-width="0.5" opacity="0.6" />
+              <ellipse cx="100" cy="100" rx="88" ry="36" fill="none" stroke="rgba(0,180,255,0.35)" stroke-width="0.6" />
+              <ellipse cx="100" cy="100" rx="36" ry="88" fill="none" stroke="rgba(0,180,255,0.35)" stroke-width="0.6" />
+              <ellipse cx="100" cy="100" rx="88" ry="60" fill="none" stroke="rgba(0,180,255,0.2)" stroke-width="0.4" transform="rotate(60 100 100)" />
+              <ellipse cx="100" cy="100" rx="88" ry="60" fill="none" stroke="rgba(0,180,255,0.2)" stroke-width="0.4" transform="rotate(-60 100 100)" />
+            </svg>
+          </div>
+        </div>
+        </div>
+        <a class="scroll-hint" href="#proyectos" aria-label="Ir a proyectos">
+          <span class="mouse" aria-hidden="true"></span>
+          <span>Desliza</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Proyectos destacados</p>
+            <h2>Explora mis proyectos</h2>
+          </div>
+        </div>
+
+        <div class="carousel" id="carousel-destacados" aria-roledescription="carrusel">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <div class="mock-browser">
+                  <div class="mock-browser-bar"><span></span><span></span><span></span></div>
+                  <div class="mock-browser-body">INNOVACIÓN QUE IMPULSA NEGOCIOS</div>
+                </div>
+                <p>
+                  Landings y sitios corporativos orientados a conversión: mensaje claro, velocidad de carga
+                  y formularios que generan contactos reales.
+                </p>
+              </div>
+              <div class="carousel-slide">
+                <div class="mock-browser">
+                  <div class="mock-browser-bar"><span></span><span></span><span></span></div>
+                  <div class="mock-browser-body">EXPERIENCIAS WEB A MEDIDA</div>
+                </div>
+                <p>
+                  Arquitectura de información pensada para el usuario, componentes reutilizables y entrega
+                  lista para escalar cuando tu negocio crece.
+                </p>
+              </div>
+              <div class="carousel-slide">
+                <div class="mock-browser">
+                  <div class="mock-browser-bar"><span></span><span></span><span></span></div>
+                  <div class="mock-browser-body">UI/UX &amp; PERFORMANCE</div>
+                </div>
+                <p>
+                  Diseño UI/UX accesible, responsive y cuidado al detalle; optimización Core Web Vitals y
+                  buenas prácticas SEO técnico en cada entrega.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-nav">
+            <button type="button" class="carousel-prev" aria-label="Anterior">‹</button>
+            <div class="carousel-dots" role="tablist" aria-label="Diapositivas"></div>
+            <button type="button" class="carousel-next" aria-label="Siguiente">›</button>
+          </div>
+        </div>
+
+        <div class="section-head" style="margin-top: 3.5rem;">
+          <div>
+            <p class="section-kicker">Mis trabajos</p>
+            <h2>Proyectos recientes</h2>
+          </div>
+          <a class="link-quiet" href="#trabajos-recientes">Ver todos</a>
+        </div>
+
+        <div id="trabajos-recientes" class="works-grid">
+          <article class="glass work-card reveal">
+            <div class="work-thumb" aria-hidden="true">
+              <div class="mini-browser-bar"><i></i><i></i><i></i></div>
+              <div class="work-thumb-inner">Luxe Studio</div>
+            </div>
+            <div class="work-body">
+              <h3>Luxe Studio</h3>
+              <p>Sitio editorial para estudio creativo: tipografía protagonista, galería fluida y contacto directo desde cualquier sección.</p>
+              <span class="work-cat">Web design</span>
+              <div class="work-tags">
+                <span>HTML/CSS</span><span>Animaciones</span><span>Responsive</span>
+              </div>
+              <a class="work-link" href="#contacto">Solicitar similar →</a>
+            </div>
+          </article>
+          <article class="glass work-card reveal">
+            <div class="work-thumb" aria-hidden="true">
+              <div class="mini-browser-bar"><i></i><i></i><i></i></div>
+              <div class="work-thumb-inner">BrandBoost</div>
+            </div>
+            <div class="work-body">
+              <h3>BrandBoost</h3>
+              <p>Landing para agencia de marketing: prueba social, servicios modulares y CTA hacia WhatsApp y calendario.</p>
+              <span class="work-cat">Landing page</span>
+              <div class="work-tags">
+                <span>UI/UX</span><span>Formularios</span><span>Analytics</span>
+              </div>
+              <a class="work-link" href="#contacto">Solicitar similar →</a>
+            </div>
+          </article>
+          <article class="glass work-card reveal">
+            <div class="work-thumb" aria-hidden="true">
+              <div class="mini-browser-bar"><i></i><i></i><i></i></div>
+              <div class="work-thumb-inner">Eduplatform</div>
+            </div>
+            <div class="work-body">
+              <h3>Eduplatform</h3>
+              <p>Panel de alumno y tutor, progreso por módulos y pagos recurrentes integrados en la experiencia.</p>
+              <span class="work-cat">Web app</span>
+              <div class="work-tags">
+                <span>React</span><span>API REST</span><span>Auth</span>
+              </div>
+              <a class="work-link" href="#contacto">Solicitar similar →</a>
+            </div>
+          </article>
+          <article class="glass work-card reveal">
+            <div class="work-thumb" aria-hidden="true">
+              <div class="mini-browser-bar"><i></i><i></i><i></i></div>
+              <div class="work-thumb-inner">Cesar Delivery</div>
+            </div>
+            <div class="work-body">
+              <h3>Cesar Delivery</h3>
+              <p>Catálogo de productos, carrito y flujo de pedido optimizado para móvil; integración con mensajería para confirmación.</p>
+              <span class="work-cat">E-commerce</span>
+              <div class="work-tags">
+                <span>Catálogo</span><span>Checkout</span><span>WhatsApp</span>
+              </div>
+              <a class="work-link" href="#contacto">Solicitar similar →</a>
+            </div>
+          </article>
+          <article class="glass work-card reveal">
+            <div class="work-thumb" aria-hidden="true">
+              <div class="mini-browser-bar"><i></i><i></i><i></i></div>
+              <div class="work-thumb-inner">Clínica Norte</div>
+            </div>
+            <div class="work-body">
+              <h3>Clínica Norte</h3>
+              <p>Web institucional con especialidades, ubicación en mapa y formulario de citas con asunto automático por servicio.</p>
+              <span class="work-cat">Sitio institucional</span>
+              <div class="work-tags">
+                <span>SEO local</span><span>Mapas</span><span>Formularios</span>
+              </div>
+              <a class="work-link" href="#contacto">Solicitar similar →</a>
+            </div>
+          </article>
+          <article class="glass work-card reveal">
+            <div class="work-thumb" aria-hidden="true">
+              <div class="mini-browser-bar"><i></i><i></i><i></i></div>
+              <div class="work-thumb-inner">DAYKER Portfolio</div>
+            </div>
+            <div class="work-body">
+              <h3>DAYKER — Portafolio</h3>
+              <p>Esta misma pieza: una sola página, carga rápida, navegación por anclas y formulario de contacto listo para producción.</p>
+              <span class="work-cat">Portafolio</span>
+              <div class="work-tags">
+                <span>HTML</span><span>CSS</span><span>JS vanilla</span>
+              </div>
+              <a class="work-link" href="#inicio">Ver arriba ↑</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Sobre mí</p>
+            <h2>Apasionado por crear soluciones digitales</h2>
+          </div>
+        </div>
+
+        <div class="about-layout">
+          <div>
+            <p class="about-lead">
+              Hola, soy Dayker. Desde Aguachica (Cesar, Colombia) ayudo a marcas y negocios a verse
+              profesionales en línea con sitios rápidos, ordenados y fáciles de mantener.
+            </p>
+            <p style="color: var(--muted); margin: 0 0 1rem;">
+              Me muevo entre diseño UI/UX y desarrollo front-end y back-end cuando el proyecto lo requiere:
+              prototipos, sistemas de componentes, integración con APIs, formularios, paneles simples y
+              despliegue en hosting o plataformas estáticas.
+            </p>
+            <p style="color: var(--muted); margin: 0 0 1rem;">
+              Creo en comunicación clara, plazos realistas y documentación mínima para que tú o tu equipo
+              puedan seguir evolucionando el producto sin depender ciegamente de terceros.
+            </p>
+            <p style="margin: 0 0 0.75rem; font-size: 0.88rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.08em;">Cómo trabajo</p>
+            <ul class="about-list">
+              <li>Diagnóstico del objetivo (ventas, leads, imagen o soporte).</li>
+              <li>Propuesta de alcance y entregables; sin sorpresas en el precio.</li>
+              <li>Iteraciones con revisión en vivo antes del lanzamiento.</li>
+              <li>Entrega con checklist SEO básico, rendimiento y accesibilidad.</li>
+            </ul>
+            <div class="hero-actions" style="justify-content: flex-start;">
+              <a class="btn btn-primary" href="#contacto">Agendar conversación</a>
+              <a class="btn btn-ghost" href="#proyectos">Ver casos</a>
+            </div>
+          </div>
+          <div class="glass" style="padding: 1.5rem;">
+            <div class="skill-list">
+              <div class="skill-item">
+                <label><strong>Desarrollo Web</strong><span>95%</span></label>
+                <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+              </div>
+              <div class="skill-item">
+                <label><strong>Diseño UI/UX</strong><span>90%</span></label>
+                <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+              </div>
+              <div class="skill-item">
+                <label><strong>JavaScript / TypeScript</strong><span>92%</span></label>
+                <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+              </div>
+              <div class="skill-item">
+                <label><strong>React / Next.js</strong><span>93%</span></label>
+                <div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div>
+              </div>
+              <div class="skill-item">
+                <label><strong>Node.js</strong><span>85%</span></label>
+                <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+              </div>
+              <div class="skill-item">
+                <label><strong>Bases de datos</strong><span>80%</span></label>
+                <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+              </div>
+            </div>
+            <p style="margin: 0 0 0.75rem; font-size: 0.75rem; color: var(--muted); line-height: 1.4;">
+              Cifras de referencia del recorrido; los porcentajes de habilidad son una guía visual de
+              confianza en cada área, no un examen certificado.
+            </p>
+            <div class="stats">
+              <div class="stat-card"><strong>50+</strong><span>Proyectos y entregas acumuladas</span></div>
+              <div class="stat-card"><strong>30+</strong><span>Clientes y colaboraciones</span></div>
+              <div class="stat-card"><strong>2+</strong><span>Años enfocado en web profesional</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Servicios</p>
+            <h2>¿Cómo puedo ayudarte?</h2>
+          </div>
+        </div>
+        <div class="services-row">
+          <div class="glass service-card reveal">
+            <div class="service-icon" aria-hidden="true">◆</div>
+            <h3>Desarrollo web</h3>
+            <p>Sitios multipágina, landings y blogs con HTML semántico, CSS moderno y JavaScript cuando aporta valor.</p>
+          </div>
+          <div class="glass service-card reveal">
+            <div class="service-icon" aria-hidden="true">◇</div>
+            <h3>Diseño UI/UX</h3>
+            <p>Wireframes, sistema visual, componentes y handoff listo para implementar o para que yo mismo lo codifique.</p>
+          </div>
+          <div class="glass service-card reveal">
+            <div class="service-icon" aria-hidden="true">▣</div>
+            <h3>Tiendas online</h3>
+            <p>Catálogo, fichas de producto, medios de pago según tu proveedor y acompañamiento en la primera publicación.</p>
+          </div>
+          <div class="glass service-card reveal">
+            <div class="service-icon" aria-hidden="true">↻</div>
+            <h3>Mantenimiento</h3>
+            <p>Actualizaciones de contenido, mejoras de velocidad, parches de seguridad y soporte por horas o bolsa mensual.</p>
+          </div>
+          <div class="glass service-card reveal">
+            <div class="service-icon" aria-hidden="true">⚙</div>
+            <h3>Sistemas web</h3>
+            <p>Paneles internos, integraciones con APIs, automatizaciones ligeras y despliegues en la nube o VPS sencillo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Metodología</p>
+            <h2>Proceso transparente, de punta a punta</h2>
+          </div>
+          <p>
+            Cada proyecto arranca con una conversación breve para alinear expectativas; luego documentamos
+            alcance y fechas antes de escribir la primera línea de código.
+          </p>
+        </div>
+        <div class="process-grid">
+          <div class="glass process-step reveal">
+            <div class="step-num">01</div>
+            <h3>Descubrimiento</h3>
+            <p>Objetivos, público, referencias y contenido disponible. Definimos qué éxito significa para ti.</p>
+          </div>
+          <div class="glass process-step reveal">
+            <div class="step-num">02</div>
+            <h3>Arquitectura y diseño</h3>
+            <p>Estructura de páginas, wireframe si aplica y diseño visual alineado a tu marca.</p>
+          </div>
+          <div class="glass process-step reveal">
+            <div class="step-num">03</div>
+            <h3>Desarrollo</h3>
+            <p>Implementación responsive, formularios, SEO técnico básico y pruebas en dispositivos reales.</p>
+          </div>
+          <div class="glass process-step reveal">
+            <div class="step-num">04</div>
+            <h3>Lanzamiento y soporte</h3>
+            <p>Despliegue, monitoreo inicial y opción de mantenimiento o training para tu equipo.</p>
+          </div>
+        </div>
+
+        <div class="section-head" style="margin-top: 3rem;">
+          <div>
+            <p class="section-kicker">Stack</p>
+            <h2>Herramientas que uso a diario</h2>
+          </div>
+          <p>Stack flexible según el proyecto; estas son las bases más frecuentes en mi flujo.</p>
+        </div>
+        <div class="glass" style="padding: 1.5rem;">
+          <div class="tech-grid">
+            <span class="tech-pill">HTML5 / CSS3</span>
+            <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">React / Next.js</span>
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Git / GitHub</span>
+            <span class="tech-pill">Figma</span>
+            <span class="tech-pill">REST APIs</span>
+            <span class="tech-pill">SQL</span>
+            <span class="tech-pill">SEO técnico</span>
+            <span class="tech-pill">Accesibilidad WCAG</span>
+            <span class="tech-pill">Performance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Contacto</p>
+            <h2>Hablemos de tu proyecto</h2>
+          </div>
+          <p>
+            Cuéntame en qué etapa estás (idea, rediseño o migración) y en qué plazo te gustaría publicar.
+            Respondo por email y WhatsApp; horario preferente Colombia (GMT-5).
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div>
+            <div class="contact-details">
+              <h3>Datos de contacto</h3>
+              <dl>
+                <dt>Nombre</dt>
+                <dd>Dayker</dd>
+                <dt>Email</dt>
+                <dd><a href="mailto:daykenavadayker@gmail.com">daykenavadayker@gmail.com</a> 📧</dd>
+                <dt>Teléfono</dt>
+                <dd><a href="tel:+573157389913">+57 315 7389913</a> 📞</dd>
+                <dt>Ubicación</dt>
+                <dd>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Aguachica%2C+Cesar%2C+Colombia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >Aguachica, Cesar, Colombia</a>
+                  📍
+                </dd>
+              </dl>
+            </div>
+            <p style="color: var(--muted); margin: 0 0 1rem;">Elige el canal que prefieras (respuesta habitual en menos de 24 h hábiles).</p>
+            <div class="social-row">
+              <a class="btn btn-primary" href="https://wa.me/573157389913" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a class="btn btn-ghost" href="mailto:daykenavadayker@gmail.com">Email</a>
+              <a class="btn btn-ghost" href="tel:+573157389913">Llamar</a>
+              <a class="btn btn-ghost" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+            <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--muted);">
+              Sustituye el enlace de Instagram por tu perfil público cuando lo tengas.
+            </p>
+          </div>
+
+          <form class="glass contact-form" id="form-contacto" style="padding: 1.5rem;" novalidate>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+
+            <label for="asunto">Asunto</label>
+            <input id="asunto" name="asunto" type="text" required />
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <button class="btn btn-primary" type="submit" style="width: 100%;">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-strip">
+      <div class="wrap">
+        <h2>¿Listo para el siguiente paso?</h2>
+        <p>Un solo mensaje basta para revisar viabilidad, tiempos y una propuesta alineada a tu presupuesto.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a class="btn btn-primary" href="https://wa.me/573157389913" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:daykenavadayker@gmail.com">Enviar email</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-col footer-brand">
+        <span class="logo-text">DAYKER</span>
+        <p>
+          DAYKER es la marca digital de <strong style="color: var(--text);">Dayker</strong>: desarrollo web,
+          UI/UX y acompañamiento técnico desde Aguachica hacia clientes en toda Colombia y Latinoamérica.
+        </p>
+        <p style="margin: 1rem 0 0; font-size: 0.88rem; color: var(--muted);">
+          <a href="mailto:daykenavadayker@gmail.com">daykenavadayker@gmail.com</a><br />
+          <a href="tel:+573157389913">+57 315 7389913</a><br />
+          Aguachica, Cesar, Colombia
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Desarrollo web</a></li>
+          <li><a href="#servicios">Diseño UI/UX</a></li>
+          <li><a href="#servicios">Tiendas online</a></li>
+          <li><a href="#servicios">Mantenimiento</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto directo</h4>
+        <ul>
+          <li><a href="https://wa.me/573157389913" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="mailto:daykenavadayker@gmail.com">daykenavadayker@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-copy">
+      © <span id="y"></span> Dayker · DAYKER. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    (function () {
+      var root = document.getElementById("carousel-destacados");
+      if (!root) return;
+      var track = root.querySelector(".carousel-track");
+      var slides = root.querySelectorAll(".carousel-slide");
+      var prev = root.querySelector(".carousel-prev");
+      var next = root.querySelector(".carousel-next");
+      var dotsWrap = root.querySelector(".carousel-dots");
+      var i = 0;
+
+      function renderDots() {
+        dotsWrap.innerHTML = "";
+        slides.forEach(function (_, idx) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", "Ir a slide " + (idx + 1));
+          if (idx === i) b.classList.add("is-active");
+          b.addEventListener("click", function () {
+            i = idx;
+            update();
+          });
+          dotsWrap.appendChild(b);
+        });
+      }
+
+      function update() {
+        track.style.transform = "translateX(" + -i * 100 + "%)";
+        dotsWrap.querySelectorAll("button").forEach(function (btn, idx) {
+          btn.classList.toggle("is-active", idx === i);
+        });
+      }
+
+      prev.addEventListener("click", function () {
+        i = (i - 1 + slides.length) % slides.length;
+        update();
+      });
+      next.addEventListener("click", function () {
+        i = (i + 1) % slides.length;
+        update();
+      });
+
+      renderDots();
+      update();
+    })();
+
+    (function () {
+      var form = document.getElementById("form-contacto");
+      var mail = "daykenavadayker@gmail.com";
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var nombre = form.nombre.value.trim();
+        var email = form.email.value.trim();
+        var asunto = form.asunto.value.trim();
+        var mensaje = form.mensaje.value.trim();
+        if (!nombre || !email || !asunto || !mensaje) {
+          alert("Completa todos los campos.");
+          return;
+        }
+        var body =
+          "Nombre: " + nombre + "%0D%0AEmail: " + email + "%0D%0A%0D%0A" + encodeURIComponent(mensaje);
+        window.location.href =
+          "mailto:" + mail + "?subject=" + encodeURIComponent(asunto) + "&body=" + body;
+      });
+    })();
+
+    (function () {
+      if (!("IntersectionObserver" in window)) {
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          el.classList.add("is-visible");
+        });
+        return;
+      }
+      var obs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+      );
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        obs.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
+const express = require("express");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
+const cors = require("cors");
+const xss = require("xss-clean");
+const hpp = require("hpp");
+
+const app = express();
+
+app.use(express.json());
+
+/* HELMET */
+app.use(helmet());
+
+/* CORS */
+app.use(cors());
+
+/* ANTI XSS */
+app.use(xss());
+
+/* ANTI PARAMETER POLLUTION */
+app.use(hpp());
+
+/* RATE LIMIT */
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: "Demasiadas peticiones"
+});
+
+app.use(limiter);
+
+/* FIREWALL SIMPLE */
+
+app.use((req,res,next)=>{
+
+  const blockedIps = [
+    "1.1.1.1"
+  ];
+
+  const ip = req.ip;
+
+  if(blockedIps.includes(ip)){
+    return res.status(403).send("IP bloqueada");
+  }
+
+  next();
+
+});
+
+/* DETECCION BOT */
+
+app.use((req,res,next)=>{
+
+  const ua = req.headers["user-agent"] || "";
+
+  const bots = [
+    "sqlmap",
+    "nikto",
+    "curl",
+    "python",
+    "wget"
+  ];
+
+  const detected =
+  bots.some(bot =>
+    ua.toLowerCase().includes(bot)
+  );
+
+  if(detected){
+    return res.status(403).send("Bot bloqueado");
+  }
+
+  next();
+
+});
+
+/* RUTA */
+
+app.get("/",(req,res)=>{
+  res.send("Servidor protegido");
+});
+
+/* ERROR HANDLER */
+
+app.use((err,req,res,next)=>{
+
+  console.error(err);
+
+  res.status(500).send(
+    "Error interno protegido"
+  );
+
+});
+
+const PORT = 3000;
+
+app.listen(PORT,()=>{
+  console.log(
+    `Servidor seguro en puerto ${PORT}`
+  );
+});
